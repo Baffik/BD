@@ -19,6 +19,7 @@ public class ADDGroups extends JFrame {
     public ADDGroups()
     {
         setContentPane(panel1);
+        panel1.setBackground(Color.YELLOW);
         setPreferredSize(new Dimension(500/3,600/3));
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int sizeWidth = 600;

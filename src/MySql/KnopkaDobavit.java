@@ -19,6 +19,7 @@ public class KnopkaDobavit extends JFrame {
 
     public KnopkaDobavit()
     {
+        panel.setBackground(Color.YELLOW);
         setContentPane(panel);
         setPreferredSize(new Dimension(500/3,600/3));
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -29,7 +30,7 @@ public class KnopkaDobavit extends JFrame {
         setBounds(locationX, locationY, sizeWidth, sizeHeight);
         pack();
         setVisible(true);
-       // setAlwaysOnTop( true );
+       //setAlwaysOnTop( true );
         //setLocationByPlatform( true );
 
 

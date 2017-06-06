@@ -1,14 +1,11 @@
 package Journal;
 
 import MySql.DBConnection;
-import MySql.OsnForma;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -26,12 +23,17 @@ public class Options extends JFrame {
     private JPanel panel1;
     private JButton вернутсяВГлавноеМенюButton;
     private JButton выходButton;
+    private JList list4;
+    private JLabel l1;
+    private JLabel l2;
+    private JLabel l3;
+    final DefaultListModel listModel = new DefaultListModel();
 
-    ArrayList <String> list = new ArrayList<String>();
+    ArrayList <String> list1 = new ArrayList<String>();
 
     public Options(final DBConnection connect) {
 
-
+        panel1.setBackground(Color.YELLOW);
         setContentPane(panel1);
         setPreferredSize(new Dimension(500,600));
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -40,10 +42,15 @@ public class Options extends JFrame {
         int locationX = (screenSize.width - sizeWidth) / 2;
         int locationY = (screenSize.height - sizeHeight) / 2;
         setBounds(locationX, locationY, sizeWidth, sizeHeight);
-        //setResizable(false);
         pack();
         setVisible(true);
+        list4.setLayoutOrientation(JList.VERTICAL);
+        list4.setModel(listModel);
 
+        Font font = new Font("Arial", Font.PLAIN, 18);
+        l1.setFont(font);
+        l3.setFont(font);
+        l2.setFont(font);
 
         DBConnection.rs = query("SELECT * from Groups");
 
@@ -69,7 +76,6 @@ public class Options extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-
                 String vuborGroups = (String) comboBox1.getSelectedItem();
                 String vuborPredmets = (String) comboBox2.getSelectedItem();
                 String nametable = vuborGroups + vuborPredmets;
@@ -78,30 +84,25 @@ public class Options extends JFrame {
 
                 updateQuery("ALTER TABLE " + nametable + " ADD students varchar(100) NOT NULL");
 
-
                 try {
 
                     DBConnection.rs = connect.query("SELECT * from " + vuborGroups);
                     while (rs.next()) {
                         String students = rs.getString("student");
-                        list.add(students);
-                       // updateQuery("INSERT INTO " + nametable + " (students)VALUES('" + students + "')");
+                        list1.add(students);
                         System.out.println("Student " +students);
                     }
 
-                    for(int i=0; i<list.size(); i++)
+                    for(int i = 0; i< list1.size(); i++)
                     {
-                        String stud = list.get(i);
+                        String stud = list1.get(i);
                         updateQuery("INSERT INTO " + nametable + " (students)VALUES('" + stud + "')");
-                        System.out.println (list.get(i));
+                        System.out.println (list1.get(i));
                     }
+                    listModel.addElement(nametable);
                 }
                     catch( Exception r)
                     {r.printStackTrace();}
-
-                //String ss = "Petrov2";
-                //updateQuery("INSERT INTO " + nametable + " (students)VALUES('" + ss + "')");
-
                 new CreateJournal(nametable);
                 System.out.println("Таблица созданна!");
             }
@@ -111,10 +112,8 @@ public class Options extends JFrame {
         открытьЗаписьButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String vuborGroups = (String) comboBox1.getSelectedItem();
-                String vuborPredmets = (String) comboBox2.getSelectedItem();
-                String nametable = vuborGroups + vuborPredmets;
 
+                String nametable = (String) list4.getSelectedValue();
                 new OpenForm(nametable, connect);
             }
         });
@@ -124,10 +123,11 @@ public class Options extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String vuborGroups = (String) comboBox1.getSelectedItem();
-                String vuborPredmets = (String) comboBox2.getSelectedItem();
-                String nametable = vuborGroups + vuborPredmets;
+                //String vuborGroups = (String) comboBox1.getSelectedItem();
+               // String vuborPredmets = (String) comboBox2.getSelectedItem();
+                //String nametable = vuborGroups + vuborPredmets;
 
+                String nametable = (String) list4.getSelectedValue();
 
                 updateQuery("DROP TABLE " + nametable + ";");
                 System.out.println("данные удаленны");

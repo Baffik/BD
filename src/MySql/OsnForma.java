@@ -41,8 +41,37 @@ public class OsnForma extends JFrame {
     private JButton удалитьВсёButton;
     private JButton вернутсяВГлавноеМенюButton;
     private JButton выходButton;
+    private JPanel panel2;
+    private JPanel panel3;
+    private JLabel l1;
+    private JLabel l2;
+    private JLabel l3;
+    private JLabel l4;
+    private JLabel l5;
+    private JLabel l6;
+    private JLabel lIcon;
 
     public OsnForma(final DBConnection connect) {
+
+       panel2.setBackground(Color.YELLOW);
+       panel3.setBackground(Color.YELLOW);
+       table1.setBackground(Color.YELLOW);
+       table2.setBackground(Color.YELLOW);
+       table3.setBackground(Color.YELLOW);
+
+       Font font = new Font("Arial", Font.PLAIN, 16);
+        l1.setFont(font);
+        l2.setFont(font);
+        l3.setFont(font);
+        l5.setFont(font);
+        l6.setFont(font);
+       // Font font1 = new Font("Times New Roman", Font.PLAIN, 12);
+       // table1.setFont(font1);
+       // table2.setFont(font1);
+       // table3.setFont(font1);
+
+        ImageIcon icon = new ImageIcon(OsnForma.class.getResource("/5.png"));
+        lIcon.setIcon(icon);
 
         setName("admin");
         setContentPane(panel);

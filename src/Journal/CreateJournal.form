@@ -8,7 +8,7 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="5d47" class="javax.swing.JLabel">
+      <component id="5d47" class="javax.swing.JLabel" binding="l3">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -24,7 +24,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="a392d" class="javax.swing.JLabel">
+      <component id="a392d" class="javax.swing.JLabel" binding="l5">
         <constraints>
           <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -48,7 +48,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="3becc" class="javax.swing.JLabel">
+      <component id="3becc" class="javax.swing.JLabel" binding="l7">
         <constraints>
           <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -56,7 +56,7 @@
           <text value="Введите количество лабораторных"/>
         </properties>
       </component>
-      <component id="599dd" class="javax.swing.JLabel">
+      <component id="599dd" class="javax.swing.JLabel" binding="l1">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -72,7 +72,7 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="ac56f" class="javax.swing.JLabel">
+      <component id="ac56f" class="javax.swing.JLabel" binding="l2">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -80,7 +80,7 @@
           <text value="Лекций"/>
         </properties>
       </component>
-      <component id="cac30" class="javax.swing.JLabel">
+      <component id="cac30" class="javax.swing.JLabel" binding="l4">
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -96,7 +96,7 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="cb2ba" class="javax.swing.JLabel">
+      <component id="cb2ba" class="javax.swing.JLabel" binding="l6">
         <constraints>
           <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>

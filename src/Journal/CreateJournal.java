@@ -21,6 +21,13 @@ public class CreateJournal extends JFrame {
     private JCheckBox checkBox3;
     private JButton подвердитьButton;
     private JPanel panel1;
+    private JLabel l1;
+    private JLabel l2;
+    private JLabel l3;
+    private JLabel l4;
+    private JLabel l5;
+    private JLabel l6;
+    private JLabel l7;
 
     public CreateJournal(final String nametable)
     {
@@ -35,6 +42,17 @@ public class CreateJournal extends JFrame {
         setBounds(locationX, locationY, sizeWidth, sizeHeight);
         pack();
         setVisible(true);
+        panel1.setBackground(Color.YELLOW);
+
+        Font font = new Font("Arial", Font.PLAIN, 18);
+        l1.setFont(font);
+        l2.setFont(font);
+        l3.setFont(font);
+        l4.setFont(font);
+        l5.setFont(font);
+        l6.setFont(font);
+        l7.setFont(font);
+
 
         System.out.println("Perehod");
 

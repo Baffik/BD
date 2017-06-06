@@ -18,6 +18,7 @@ public class DeletePredmet extends JFrame {
 
     public DeletePredmet()
     {
+        panel1.setBackground(Color.YELLOW);
         setContentPane(panel1);
         setPreferredSize(new Dimension(500/3,600/3));
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();

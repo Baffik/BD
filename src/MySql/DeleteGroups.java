@@ -19,6 +19,7 @@ public class DeleteGroups extends JFrame {
 
     public DeleteGroups()
     {
+        panel1.setBackground(Color.YELLOW);
         setContentPane(panel1);
         setPreferredSize(new Dimension(500/3,600/3));
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();

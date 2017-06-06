@@ -24,8 +24,9 @@ public class Menu extends JFrame {
 
     public Menu(final DBConnection connect) {
 
+        panel.setBackground(Color.YELLOW);
         setContentPane(panel);
-        setResizable(false);
+       // setResizable(false);
         setPreferredSize(new Dimension(500,600));
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int sizeWidth = 600;
@@ -35,6 +36,16 @@ public class Menu extends JFrame {
         setBounds(locationX, locationY, sizeWidth, sizeHeight);
         pack();
         setVisible(true);
+
+        ImageIcon icon = new ImageIcon(Menu.class.getResource("/2.png"));
+        посещениеГруппButton.setIcon(icon);
+   //     посещениеГруппButton.setSize(new Dimension(100, 100));
+
+        ImageIcon icon1 = new ImageIcon(Menu.class.getResource("/3.png"));
+        настройкаButton.setIcon(icon1);
+
+        ImageIcon icon2 = new ImageIcon(Menu.class.getResource("/4.png"));
+        выходButton.setIcon(icon2);
 
         // вызов подпрограммы добавление студентов, групп и редактирование
         настройкаButton.addActionListener(new ActionListener() {

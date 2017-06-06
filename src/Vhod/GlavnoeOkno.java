@@ -28,7 +28,9 @@ public class GlavnoeOkno extends JFrame{
 
     public GlavnoeOkno() {
 
+
         setContentPane(panel1);
+        panel1.setBackground(Color.YELLOW);
         setResizable(false);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int sizeWidth = 600;
@@ -39,12 +41,15 @@ public class GlavnoeOkno extends JFrame{
         setPreferredSize(new Dimension(500,600));
         pack();
         setVisible(true);
+        Font font = new Font("Arial", Font.PLAIN, 18);
+        L1.setFont(font);
+        l5.setFont(font);
+        l3.setFont(font);
+        ImageIcon icon = new ImageIcon(GlavnoeOkno.class.getResource("/1.png"));
+        LK.setIcon(icon);
 
-      //  ImageIcon icon = new ImageIcon("green.png");
-      //   LK.setIcon(icon);
-       //  LK.setPreferredSize(new Dimension(200, 200));
-       // textField3.setText("Diplom");
-       // textField1.setText("root");
+        textField3.setText("Diplom");
+        textField1.setText("root");
 
       //vhod v programmu
         входButton.addActionListener(new ActionListener() {
@@ -54,9 +59,6 @@ public class GlavnoeOkno extends JFrame{
             String login = textField1.getText();
             String parol = textField2.getText();
             String nameDB = textField3.getText();
-                L2.setForeground(Color.BLACK);
-                L4.setForeground(Color.BLACK);
-                L6.setForeground(Color.BLACK);
                 final DBConnection connect = new DBConnection("localhost",login,parol,nameDB);
                 // Создаем таблици групп и предметов
                 String createPredmet =  "CREATE TABLE IF NOT EXISTS PR(ID_PR int(100) NOT NULL auto_increment,predmet_PR varchar(100) NOT NULL, PRIMARY KEY (ID_PR))" ;
